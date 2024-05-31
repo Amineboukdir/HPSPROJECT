@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Registration from "./components/registration";
 import InstitutionForm from "./components/InstitutionForm";
@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={showLogin ? <Login onSignUpClick={handleSignUpClick} /> : <Registration onSignInClick={handleSignInClick} />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login onSignUpClick={handleSignUpClick} />} />
           <Route path="/register" element={<Registration onSignInClick={handleSignInClick} />} />
           <Route path="/institution" element={<InstitutionForm />} />

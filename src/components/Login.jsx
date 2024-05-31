@@ -6,6 +6,7 @@ import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import gol from "../assets/pppp.png";
 
+
 const Login = ({ onSignUpClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
