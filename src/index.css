@@ -15,7 +15,12 @@ body{
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
-
+.custom-body {
+  margin: 0;
+  background: url('../src/assets/gray.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
 .login-main{
   display: flex;
   position: relative;

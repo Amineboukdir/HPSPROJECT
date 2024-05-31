@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Login from "./components/Login";
 import Registration from "./components/registration";
 import InstitutionForm from "./components/InstitutionForm";
+import { CardProfile } from "./components/CardProfile";
+import { Dashboard } from "./components/Dashboard";
+
+import '@mantine/core/styles.css';
+
+import { MantineProvider } from '@mantine/core';
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
@@ -16,16 +22,20 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login onSignUpClick={handleSignUpClick} />} />
-          <Route path="/register" element={<Registration onSignInClick={handleSignInClick} />} />
-          <Route path="/institution" element={<InstitutionForm />} />
-        </Routes>
-      </div>
-    </Router>
+    <MantineProvider>
+      <Router>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login onSignUpClick={handleSignUpClick} />} />
+            <Route path="/register" element={<Registration onSignInClick={handleSignInClick} />} />
+            <Route path="/institution" element={<InstitutionForm />} />
+            <Route path="/card-profile" element={<CardProfile />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </div>
+      </Router>
+    </MantineProvider>
   );
 }
 

@@ -1,0 +1,21 @@
+.title {
+    font-family:
+        Greycliff CF,
+        var(--mantine-font-family);
+    font-weight: 900;
+}
+.main_container {
+    height: 2000px;
+    width: 2000px;
+}
+
+.custom-body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('../src/assets/gray.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
