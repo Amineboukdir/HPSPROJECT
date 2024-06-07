@@ -1,7 +1,12 @@
 @media(max-width: 900px){
     .login-left{
         display: none;
+
     }   
+    .login-image {
+      width: 100px; /* ou une autre valeur comme 50%, 200px, etc. */
+      height: auto; /* pour maintenir le ratio de l'image */
+  }
 }
 
 @media(max-width: 370px){
@@ -108,12 +113,12 @@
 
   .gol {
     position: absolute;
-    top: 20px; 
+    top: 0px; 
     left: 65px; 
     z-index: 100;
     width: auto;
     height: auto;
-    max-width: 100px; 
+    max-width: 160px; 
   }
 
   

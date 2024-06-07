@@ -5,6 +5,7 @@ import Registration from "./components/registration";
 import InstitutionForm from "./components/InstitutionForm";
 import { CardProfile } from "./components/CardProfile";
 import { Dashboard } from "./components/Dashboard";
+import Home from "./home"; // Import the new Home component
 
 import '@mantine/core/styles.css';
 
@@ -27,6 +28,7 @@ function App() {
         <div className="app">
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/home" element={<Home />} /> {/* Home route */}
             <Route path="/login" element={<Login onSignUpClick={handleSignUpClick} />} />
             <Route path="/register" element={<Registration onSignInClick={handleSignInClick} />} />
             <Route path="/institution" element={<InstitutionForm />} />
