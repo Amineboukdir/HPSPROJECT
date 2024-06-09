@@ -1,7 +1,9 @@
+import React from "react";
 import styles from "./style";
-import {  Business,  Footer, Navbar, Stats, Hero } from "./components/home";
+import { Business, Footer, Navbar, Stats, Hero } from "./components/home";
+import { Element } from "react-scroll";
 
-const App = () => (
+const Home = () => (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
@@ -9,21 +11,25 @@ const App = () => (
       </div>
     </div>
 
-    <div className={`bg-primary ${styles.flexStart}`}>
+    <Element name="hero" className={`bg-primary ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
-    </div>
-    
+    </Element>
+
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <Stats />
-        <Business />
-        
-        <Footer />
       </div>
     </div>
+    
+    <Element name="features" className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Business />
+        <Footer />
+      </div>
+    </Element>
   </div>
 );
 
-export default App;
+export default Home;

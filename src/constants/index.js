@@ -14,7 +14,7 @@ export const navLinks = [
     title: "Product",
   },
   {
-    id: "clients",
+    id: "register",
     title: "Sign in",
   },
 ];
@@ -177,7 +177,7 @@ export const socialMedia = [
   },
 ];
 
-export const clients = [
+export const signin = [
   {
     id: "client-1",
     logo: airbnb,

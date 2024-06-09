@@ -1,11 +1,23 @@
 import { useState } from "react";
-
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { close, logo, menu } from "../../assets";
 import { navLinks } from "../../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    if (id === "register") {
+      navigate("/register");
+    } else if (id !== "home" && id !== "features") {
+      navigate(`/${id}`);
+    }
+    setActive(id);
+    setToggle(false);
+  };
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -18,9 +30,17 @@ const Navbar = () => {
             className={`font-poppins font-medium cursor-pointer text-[20px] ${
               active === nav.title ? "text-[#000000]" : "text-[#151915]"
             } ${index === navLinks.length - 1 ? "mr-4" : "mr-20"}`}
-            onClick={() => setActive(nav.title)}
+            onClick={() => handleClick(nav.id)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            {nav.id === "register" ? (
+              <RouterLink to="/register">{nav.title}</RouterLink>
+            ) : nav.id === "home" || nav.id === "features" ? (
+              <ScrollLink to={nav.id} smooth={true} duration={300}>
+                {nav.title}
+              </ScrollLink>
+            ) : (
+              <RouterLink to={`/${nav.id}`}>{nav.title}</RouterLink>
+            )}
           </li>
         ))}
       </ul>
@@ -45,9 +65,17 @@ const Navbar = () => {
                 className={`font-poppins font-medium cursor-pointer text-[16px] ${
                   active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
+                onClick={() => handleClick(nav.id)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                {nav.id === "register" ? (
+                  <RouterLink to="/register">{nav.title}</RouterLink>
+                ) : nav.id === "home" || nav.id === "features" ? (
+                  <ScrollLink to={nav.id} smooth={true} duration={700}>
+                    {nav.title}
+                  </ScrollLink>
+                ) : (
+                  <RouterLink to={`/${nav.id}`}>{nav.title}</RouterLink>
+                )}
               </li>
             ))}
           </ul>

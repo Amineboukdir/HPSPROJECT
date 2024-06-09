@@ -246,22 +246,22 @@ form button[type='button'] {
 
 .forgot-pass-link:hover{
   text-decoration: underline;
-}
-/* Reset button styles */
+} 
+/* Reset button styles 
 .login-center-buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Adjust width as needed */
-  padding: 10px 20px; /* Adjust padding as needed */
-  font-size: 21px; /* Adjust font size as needed */
+  width: 100%; 
+  padding: 10px 20px; 
+  font-size: 21px;  
   border-radius: 2.2rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   text-align: center;
 }
 
-/* Custom styles for both buttons */
+
 .login-center-buttons{
   margin-top: 40px;
   display: flex;
@@ -292,7 +292,7 @@ form button[type='button'] {
 .login-center-buttons button:nth-child(2):hover {
   background-color: #c4c4c457;
 }
-
+*/
 .login-bottom-p{
   text-align: center;
   font-size: 1.5rem;

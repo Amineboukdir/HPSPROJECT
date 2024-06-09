@@ -6,6 +6,9 @@ import InstitutionForm from "./components/InstitutionForm";
 import { CardProfile } from "./components/CardProfile";
 import { Dashboard } from "./components/Dashboard";
 import Home from "./home"; // Import the new Home component
+import Navbar from './components/home/Navbar';  // Import the Navbar component
+import Business from "./components/home/Business"; // Import the Business component
+
 
 import '@mantine/core/styles.css';
 
@@ -27,7 +30,8 @@ function App() {
       <Router>
         <div className="app">
           <Routes>
-            <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<Home />} />
+            <Route path="/features" element={<Home />} />
             <Route path="/home" element={<Home />} /> {/* Home route */}
             <Route path="/login" element={<Login onSignUpClick={handleSignUpClick} />} />
             <Route path="/register" element={<Registration onSignInClick={handleSignInClick} />} />
